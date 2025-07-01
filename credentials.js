@@ -12,9 +12,5 @@ function decoder(creds) {
     return credentials;
 }
 
-console.log("Username:" + decoder(correctUser)); 
-
-console.log("Password: " + decoder(correctPass));  
-
-
-
+// Your turn: Use decoder() to reveal the correct username and password.
+console.log("Try running: decoder(correctUser)");
