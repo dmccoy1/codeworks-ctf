@@ -124,7 +124,7 @@ Each correct flag submission triggers the **Raspberry Pi** to send a serial comm
 ## 📜 How to Play
 
 1. **Solve the Puzzles**  
-   Go to [the CITS CTF Challenge page](https://dariuscits.github.io/cw-ctf/) and solve the 5 puzzles. Each puzzle contains a hidden flag.
+   Go to [the CITS CTF Challenge page](https://dmccoy1.github.io/codeworks-ctf/) and solve the 5 puzzles. Each puzzle contains a hidden flag.
 
 2. **Submit Flags via Python Script**  
    After finding each flag, open the terminal on the Raspberry Pi and submit the flag using the Python script. Enter the flag when prompted, and the Raspberry Pi will check the submission.
