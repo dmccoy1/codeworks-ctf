@@ -5,7 +5,7 @@ Welcome to the **CITS Capture The Flag (CTF) Challenge** — a beginner-friendly
 ## 🌐 Project Overview
 
 This project is hosted at:  
-➡️ [https://dariuscits.github.io/cw-ctf/](https://dariuscits.github.io/cw-ctf/)
+➡️ [https://dmccoy1.github.io/codeworks-ctf/](https://dmccoy1.github.io/codeworks-ctf/)
 
 Participants navigate through a series of **5 web-based puzzles**, uncovering hidden flags embedded in HTML, CSS, and JavaScript. Once a flag is found, the participant will submit it through the Python script running on the **Raspberry Pi**.
 
