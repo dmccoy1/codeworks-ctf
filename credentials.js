@@ -2,7 +2,8 @@
 
 // Hint: Look closely, it's more than just characters. 
 const correctUser = [97, 100, 109, 105, 110];  
-const correctPass = [108, 97, 109, 97, 114, 118, 56, 108, 111, 117, 115];  
+const correctPass = [104,97,99,107,105,110,103,105,115,102,117,110];
+//const _pass = String.fromCharCode(104,97,99,107,105,110,103,105,115,102,117,110);
 
 function decoder(creds) {
     let credentials = '';
@@ -13,4 +14,5 @@ function decoder(creds) {
 }
 
 // Your turn: Use decoder() to reveal the correct username and password.
-console.log("Try running: decoder(correctUser)");
+console.log(decoder(correctUser));
+console.log(decoder(correctPass));
