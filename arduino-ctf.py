@@ -6,8 +6,8 @@ def ascii_decode(ascii_list):
     return ''.join([chr(c) for c in ascii_list])
 
 # Attempt to connect to Arduino
-try:
-    ser = serial.Serial('/dev/cu.usbmodem14401', 9600)  # Update to match your Arduino port
+try:    
+    ser = serial.Serial('/dev/ttyACM0', 9600)  # Update to match your Arduino port
     time.sleep(2)  # Wait for Arduino to reset
 except serial.SerialException as e:
     print(f"⚠️ Serial connection error: {e}")
