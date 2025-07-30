@@ -5,11 +5,11 @@ function toUnicode(text) {
 }
     return `(${unicodeArray.join(',')})`; // Join the array with commas and wrap in parentheses
 }
-
-/* Example usage:
-const inputText = "Hello World!";
+ //Example usage:
+const inputText = "";
 const unicodeValues = toUnicode(inputText);
-console.log(unicodeValues); // Output: (72,101,108,108,111,32,87,111,114,108,100,33)*/
+console.log(unicodeValues); 
+
 
 
 
