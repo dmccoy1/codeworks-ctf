@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Flag 4 - Challenge</title>
   <style>
     body {
@@ -26,24 +26,123 @@
       display: none;
     }
 
-    code {
-      background-color: #111;
-      padding: 3px 6px;
-      border-radius: 4px;
+    #pinInputContainer {
+      margin-top: 20px;
+      display: none;
+    }
+
+    #flag {
+      margin-top: 30px;
+      font-size: 1.5rem;
+      font-weight: bold;
       color: #00ff00;
-      font-size: 1.1rem;
+      display: none;
+    }
+
+    #proceedLink {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      display: none;
+    }
+
+    #proceedLink a {
+      color: #00ff00;
+      text-decoration: none;
+      border: 1px solid #00ff00;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+
+    #proceedLink a:hover {
+      background-color: #003300;
+    }
+
+    input[type="text"] {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1.2rem;
+      padding: 5px 10px;
+      border: 1px solid #00ff00;
+      border-radius: 4px;
+      background-color: #111;
+      color: #00ff00;
+      width: 120px;
+      text-align: center;
+    }
+
+    button {
+      margin-left: 10px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1.2rem;
+      padding: 5px 10px;
+      border: 1px solid #00ff00;
+      border-radius: 4px;
+      background-color: #000;
+      color: #00ff00;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #003300;
     }
   </style>
 </head>
 <body>
 
-  <img src="images/playbutton.png" alt="Secret Icon" onclick="revealSecret()">
+  <img src="images/playbutton.png" alt="Secret Icon" onclick="revealSecret()" />
 
-  <div id="message">🤫 Secret passcode: <code>let5roll</code><br>Enter this in your terminal to proceed.</div>
+  <div id="message"></div>
+
+  <div id="pinInputContainer">
+    <label for="pinInput">Enter pin:</label>
+    <input type="text" id="pinInput" maxlength="4" autocomplete="off" />
+    <button onclick="checkPin()">Submit</button>
+  </div>
+
+  <div id="flag"></div>
+
+  <div id="proceedLink">
+    <a href="challenge5.html">Proceed to Challenge 5</a>
+  </div>
 
   <script>
+    // Encoded secrets in base64
+    const encodedPasscode = "bGV0NXJvbGw="; 
+    const encodedPin = "MDYyNg==";          
+    const encodedFlag = "ZmxhZ3tyaWNrX3JvbGx9"; 
+
+    // Decode base64 helper
+    function decodeBase64(str) {
+      try {
+        return atob(str);
+      } catch (e) {
+        return "";
+      }
+    }
+
     function revealSecret() {
+      // Decode passcode and show
+      const passcode = decodeBase64(encodedPasscode);
+      document.getElementById("message").innerHTML =
+        `🤫 Secret passcode: <code>${passcode}</code><br>Enter this in your terminal to proceed.`;
       document.getElementById("message").style.display = "block";
+      document.getElementById("pinInputContainer").style.display = "block";
+    }
+
+    function checkPin() {
+      const userPin = document.getElementById("pinInput").value;
+      const pin = decodeBase64(encodedPin);
+      if (userPin === pin) {
+        const flag = decodeBase64(encodedFlag);
+        document.getElementById("flag").innerHTML = `🎉 Congrats! Here is your flag: <code>${flag}</code>`;
+        document.getElementById("flag").style.display = "block";
+        // Show proceed link
+        document.getElementById("proceedLink").style.display = "block";
+        // Optionally hide the pin input so they can't try again
+        document.getElementById("pinInputContainer").style.display = "none";
+      } else {
+        alert("Incorrect pin. Try again.");
+      }
     }
   </script>
 
