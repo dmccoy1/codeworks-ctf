@@ -56,8 +56,8 @@ def flag3():
     handle_flag(3, flag_encodings[3])
 
     while True:
-        print("\n➡️  Go to the website and enter the code you received.")
-        user_code = input("Enter the code from the website: ").strip().lower()
+        print("\n➡️  Procced to Flag 4, listen for t enter the code you received.")
+        user_code = input("Secret Code: ").strip().lower()
 
         if user_code == "let5roll":
             send_serial_signal("four")
